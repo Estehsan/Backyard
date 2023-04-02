@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 export default function Header({
   photo,
@@ -26,27 +27,30 @@ export default function Header({
         <div className="flex items-center space-x-4">
           <Link
             href="/dashboard"
-            className="border-r border-gray-300 pr-4 flex space-x-2 hover:text-blue-400 transition"
-          >
+            className="border-r border-gray-300 pr-4 flex space-x-2 hover:text-blue-400 transition">
             <div>Dashboard</div>
           </Link>
           <Link
             href="/buy-credits"
-            className="border-r border-gray-300 pr-4 flex space-x-2 hover:text-blue-400 transition"
-          >
+            className="border-r border-gray-300 pr-4 flex space-x-2 hover:text-blue-400 transition">
             <div>Buy Credits</div>
             <div className="text-blue-500 bg-blue-200 rounded-full px-2 text-xs flex justify-center items-center font-bold">
               New
             </div>
           </Link>
           {photo ? (
-            <Image
-              alt="Profile picture"
-              src={photo}
-              className="w-10 rounded-full"
-              width={32}
-              height={28}
-            />
+            <Link
+              href="/"
+              onClick={() => signOut()}
+              className="flex items-center space-x-2 hover:text-blue-400 transition">
+              <Image
+                alt="Profile picture"
+                src={photo}
+                className="w-10 rounded-full"
+                width={32}
+                height={28}
+              />
+            </Link>
           ) : (
             <div className="w-10 h-10 rounded-full bg-white" />
           )}
@@ -54,8 +58,7 @@ export default function Header({
       ) : (
         <Link
           className="flex max-w-fit items-center justify-center space-x-2 rounded-lg border border-blue-600 text-white px-5 py-2 text-sm shadow-md hover:bg-blue-400 bg-blue-600 font-medium transition"
-          href="/dream"
-        >
+          href="/dream">
           <p>Sign Up </p>
         </Link>
       )}
