@@ -7,7 +7,7 @@ import SquigglyLines from "../components/SquigglyLines";
 import { Hero } from "@/components/HomePage/Hero";
 import { PricingSection } from "@/components/HomePage/PricingSection";
 import { Testimonials } from "@/components/HomePage/Testimonials";
-import { Footer } from "@/components/Footer";
+import Footer from "@/components/Footer";
 const Home: NextPage = () => {
   return (
     <div>

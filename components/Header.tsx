@@ -8,7 +8,14 @@ import { Container } from "./../components/Container";
 import { NavLink } from "./../components/NavLink";
 import { signOut } from "next-auth/react";
 import { Logo } from "./Logo";
-function MobileNavLink({ href, children }) {
+
+function MobileNavLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
   return (
     <Popover.Button as={Link} href={href} className="block w-full p-2">
       {children}
@@ -16,7 +23,7 @@ function MobileNavLink({ href, children }) {
   );
 }
 
-function MobileNavIcon({ open }) {
+function MobileNavIcon({ open }: { open: boolean }) {
   return (
     <svg
       aria-hidden="true"
@@ -143,11 +150,11 @@ export default function Header({
                 )}
               </div>
             ) : (
-              <Button href="/dream" color="blue">
-                <span>
-                  Get started <span className="hidden lg:inline">today</span>
-                </span>
-              </Button>
+              <Link
+                className="flex max-w-fit items-center justify-center space-x-2 rounded-lg border border-blue-600 text-white px-5 py-2 text-sm shadow-md hover:bg-blue-400 bg-blue-600 font-medium transition"
+                href="/dream">
+                <p>Sign Up </p>
+              </Link>
             )}
             <div className="-mr-1 md:hidden">
               <MobileNavigation />

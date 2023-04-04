@@ -1,4 +1,4 @@
-export function Logo(props) {
+export function Logo(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg aria-hidden="true" viewBox="0 0 81.75 30.000001" {...props}>
       <defs>

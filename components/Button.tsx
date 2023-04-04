@@ -23,18 +23,20 @@ const variantStyles = {
   },
 };
 
+interface ButtonProps {
+  variant?: keyof typeof variantStyles;
+  color?: keyof typeof variantStyles[keyof typeof variantStyles];
+  className?: string;
+  href?: string;
+}
+
 export function Button({
   variant = "solid",
   color = "slate",
   className = "",
   href,
   ...props
-}: {
-  variant?: keyof typeof variantStyles;
-  color?: keyof typeof variantStyles[keyof typeof variantStyles];
-  className?: string;
-  href?: string;
-}) {
+}: ButtonProps & React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>) {
   const classString = `${baseStyles[variant]} ${variantStyles[variant][color]} ${className}`;
 
   return href ? (

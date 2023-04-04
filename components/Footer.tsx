@@ -4,7 +4,7 @@ import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
 import { NavLink } from "@/components/NavLink";
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-slate-50">
       <Container>
@@ -23,7 +23,7 @@ export function Footer() {
             <Link
               href="https://twitter.com"
               className="group"
-              aria-label="TaxPal on Twitter">
+              aria-label="MightyHome on Twitter">
               <svg
                 aria-hidden="true"
                 className="h-6 w-6 fill-slate-500 group-hover:fill-slate-700">
@@ -33,7 +33,7 @@ export function Footer() {
             <Link
               href="https://github.com"
               className="group"
-              aria-label="TaxPal on GitHub">
+              aria-label="MightyHome on GitHub">
               <svg
                 aria-hidden="true"
                 className="h-6 w-6 fill-slate-500 group-hover:fill-slate-700">
@@ -42,7 +42,7 @@ export function Footer() {
             </Link>
           </div>
           <p className="mt-6 text-sm text-slate-500 sm:mt-0">
-            Copyright &copy; {new Date().getFullYear()} TaxPal. All rights
+            Copyright &copy; {new Date().getFullYear()} MightyHome. All rights
             reserved.
           </p>
         </div>

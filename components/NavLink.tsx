@@ -1,6 +1,9 @@
 import Link from "next/link";
 
-export function NavLink({ href, children }) {
+export function NavLink({
+  href,
+  children,
+}: React.PropsWithChildren<{ href: string }>) {
   return (
     <Link
       href={href}
