@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import { UploadDropzone } from "react-uploader";
 import { Uploader } from "uploader";
 import { CompareSlider } from "../components/CompareSlider";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import LoadingDots from "../components/LoadingDots";
 import ResizablePanel from "../components/ResizablePanel";
 import Toggle from "../components/Toggle";
@@ -22,6 +20,8 @@ import { Rings } from "react-loader-spinner";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Toaster, toast } from "react-hot-toast";
+import { Footer } from "@/components/Footer";
+import Header from "@/components/Header";
 
 // Configuration for the uploader
 const uploader = Uploader({
@@ -124,7 +124,8 @@ const Home: NextPage = () => {
   }, [router.query.success]);
 
   return (
-    <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
+    // <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
+    <div>
       <Head>
         <title>RoomGPT</title>
       </Head>
@@ -136,8 +137,7 @@ const Home: NextPage = () => {
         {status === "authenticated" ? (
           <Link
             href="/buy-credits"
-            className="border border-gray-700 rounded-2xl py-2 px-4 text-gray-400 text-sm my-6 duration-300 ease-in-out hover:text-gray-300 hover:scale-105 transition"
-          >
+            className="border border-gray-700 rounded-2xl py-2 px-4 text-gray-400 text-sm my-6 duration-300 ease-in-out hover:text-gray-300 hover:scale-105 transition">
             Pricing is now available.{" "}
             <span className="font-semibold text-gray-200">Click here</span> to
             buy credits!
@@ -147,8 +147,7 @@ const Home: NextPage = () => {
             href="https://twitter.com/nutlope/status/1635674124738523139?cxt=HHwWhsCz1ei8irMtAAAA"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-gray-700 rounded-2xl py-2 px-4 text-gray-400 text-sm my-6 duration-300 ease-in-out hover:text-gray-300 transition"
-          >
+            className="border border-gray-700 rounded-2xl py-2 px-4 text-gray-400 text-sm my-6 duration-300 ease-in-out hover:text-gray-300 transition">
             Over{" "}
             <span className="font-semibold text-gray-200">1 million users</span>{" "}
             have used roomGPT so far
@@ -170,8 +169,7 @@ const Home: NextPage = () => {
                 Buy more credits{" "}
                 <Link
                   href="/buy-credits"
-                  className="font-semibold text-gray-300 underline underline-offset-2 hover:text-gray-200 transition"
-                >
+                  className="font-semibold text-gray-300 underline underline-offset-2 hover:text-gray-200 transition">
                   here
                 </Link>
                 .
@@ -191,8 +189,7 @@ const Home: NextPage = () => {
               <div
                 className={`${
                   restoredLoaded ? "visible mt-6 -ml-8" : "invisible"
-                }`}
-              >
+                }`}>
                 <Toggle
                   className={`${restoredLoaded ? "visible mb-6" : "invisible"}`}
                   sideBySide={sideBySide}
@@ -283,8 +280,7 @@ const Home: NextPage = () => {
                     </div>
                     <button
                       onClick={() => signIn("google")}
-                      className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2"
-                    >
+                      className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
                       <Image
                         src="/google.png"
                         width={20}
@@ -335,8 +331,7 @@ const Home: NextPage = () => {
               {loading && (
                 <button
                   disabled
-                  className="bg-blue-500 rounded-full text-white font-medium px-4 pt-2 pb-3 mt-8 w-40"
-                >
+                  className="bg-blue-500 rounded-full text-white font-medium px-4 pt-2 pb-3 mt-8 w-40">
                   <span className="pt-4">
                     <LoadingDots color="white" style="large" />
                   </span>
@@ -345,8 +340,7 @@ const Home: NextPage = () => {
               {error && (
                 <div
                   className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-xl mt-8 max-w-[575px]"
-                  role="alert"
-                >
+                  role="alert">
                   <div className="bg-red-500 text-white font-bold rounded-t px-4 py-2">
                     Please try again later.
                   </div>
@@ -364,8 +358,7 @@ const Home: NextPage = () => {
                       setRestoredLoaded(false);
                       setError(null);
                     }}
-                    className="bg-blue-500 rounded-full text-white font-medium px-4 py-2 mt-8 hover:bg-blue-500/80 transition"
-                  >
+                    className="bg-blue-500 rounded-full text-white font-medium px-4 py-2 mt-8 hover:bg-blue-500/80 transition">
                     Generate New Room
                   </button>
                 )}
@@ -377,8 +370,7 @@ const Home: NextPage = () => {
                         appendNewToName(photoName!)
                       );
                     }}
-                    className="bg-white rounded-full text-black border font-medium px-4 py-2 mt-8 hover:bg-gray-100 transition"
-                  >
+                    className="bg-white rounded-full text-black border font-medium px-4 py-2 mt-8 hover:bg-gray-100 transition">
                     Download Generated Room
                   </button>
                 )}
