@@ -1,5 +1,4 @@
 import Link from "next/link";
-import clsx from "clsx";
 
 const baseStyles = {
   solid:
@@ -27,19 +26,20 @@ const variantStyles = {
 export function Button({
   variant = "solid",
   color = "slate",
-  className,
+  className = "",
   href,
   ...props
+}: {
+  variant?: keyof typeof variantStyles;
+  color?: keyof typeof variantStyles[keyof typeof variantStyles];
+  className?: string;
+  href?: string;
 }) {
-  className = clsx(
-    baseStyles[variant],
-    variantStyles[variant][color],
-    className
-  );
+  const classString = `${baseStyles[variant]} ${variantStyles[variant][color]} ${className}`;
 
   return href ? (
-    <Link href={href} className={className} {...props} />
+    <Link href={href} className={classString} {...props} />
   ) : (
-    <button className={className} {...props} />
+    <button className={classString} {...props} />
   );
 }
