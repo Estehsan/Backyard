@@ -133,12 +133,12 @@ const Home: NextPage = () => {
         photo={session?.user?.image || undefined}
         email={session?.user?.email || undefined}
       />
-      <main className="bg-lightbg bg-bodyc dark:bg-darkbg dark:bg-black tracking-tighter flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8">
+      <main className="bg-lightbg bg-bodyc tracking-tighter flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8">
         {status === "authenticated" ? (
           <Link
             href="/buy-credits"
             className="border border-gray-700 rounded-2xl py-2 px-4 text-gray-400 text-sm my-6 duration-300 ease-in-out hover:text-gray-300 hover:scale-105 transition">
-            Pricing is now available.{" "}
+            Pricing is available.{" "}
             <span className="font-semibold text-gray-200">Click here</span> to
             buy credits!
           </Link>
@@ -266,7 +266,10 @@ const Home: NextPage = () => {
                     />
                   </div>
                   <div className="mt-4 w-full max-w-sm">
-                    <div className="flex mt-6 w-96 items-center space-x-3">
+                    <div
+                      className="flex mt-6 w-96 items-center space-x-3 shadow-md p-4 bg-white
+                    rounded-2xl
+                    ">
                       <Image
                         src="/number-3-white.svg"
                         width={30}
@@ -283,7 +286,7 @@ const Home: NextPage = () => {
               ) : (
                 !originalPhoto && (
                   <div className="h-[250px] flex flex-col items-center space-y-6 max-w-[670px] -mt-8">
-                    <div className="max-w-xl text-gray-300">
+                    <div className="max-w-xl text-gray-500">
                       Sign in below with Google to create a free account and
                       redesign your room today. You will get 3 generations for
                       free.

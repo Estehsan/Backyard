@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Popover, Transition } from "@headlessui/react";
@@ -79,11 +79,14 @@ function MobileNavigation() {
           <Popover.Panel
             as="div"
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5">
+            <MobileNavLink href="./Dashboard">Dashboard</MobileNavLink>
+            <MobileNavLink href="#pricing">Buy Credits</MobileNavLink>
+            <MobileNavLink href="#pricing">Pricing</MobileNavLink>
+
+            <hr className="m-2 border-slate-300/40" />
             <MobileNavLink href="#features">Features</MobileNavLink>
             <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
             <MobileNavLink href="#pricing">Pricing</MobileNavLink>
-            <hr className="m-2 border-slate-300/40" />
-            <MobileNavLink href="/login">Sign in</MobileNavLink>
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>
@@ -98,8 +101,29 @@ export default function Header({
   photo?: string;
   email?: string;
 }) {
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="py-10">
+    <header
+      className={`py-1 sticky top-0 bg-white z-50 
+    ${scroll ? "shadow-md" : " "}
+    `}>
       <Container>
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
@@ -107,29 +131,24 @@ export default function Header({
               <Logo className="h-16 w-auto" />
             </Link>
             <div className="hidden md:flex md:gap-x-6">
-              <NavLink href="#features">Features</NavLink>
-              <NavLink href="#testimonials">Testimonials</NavLink>
-              <NavLink href="#pricing">Pricing</NavLink>
+              <NavLink href="./#testimonials">Testimonials</NavLink>
+              <NavLink href="./#pricing">Pricing</NavLink>
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
-            <div className="hidden md:block">
-              <NavLink href="/login">Sign in</NavLink>
-            </div>
-
             {email ? (
-              <div className="flex items-center space-x-4">
+              <div className="hidden md:flex items-center space-x-4">
                 <Link
                   href="/dashboard"
-                  className="border-r border-gray-300 pr-4 flex space-x-2 hover:text-blue-400 transition">
-                  <div>Dashboard</div>
+                  className="ma-2 hidden lg:block v-chip theme--light v-size--default ourSecondary indigo--text">
+                  Dashboard
                 </Link>
                 <Link
                   href="/buy-credits"
                   className="border-r border-gray-300 pr-4 flex space-x-2 hover:text-blue-400 transition">
                   <div>Buy Credits</div>
                   <div className="text-blue-500 bg-blue-200 rounded-full px-2 text-xs flex justify-center items-center font-bold">
-                    New
+                    few
                   </div>
                 </Link>
                 {photo ? (

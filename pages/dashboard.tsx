@@ -13,7 +13,7 @@ export default function Dashboard({ rooms }: { rooms: Room[] }) {
   const { data: session } = useSession();
 
   return (
-    <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
+    <div className="">
       <Head>
         <title>RoomGPT Dashboard</title>
       </Head>
@@ -30,8 +30,7 @@ export default function Dashboard({ rooms }: { rooms: Room[] }) {
             You have no room generations. Generate one{" "}
             <Link
               href="/dream"
-              className="text-blue-600 underline underline-offset-2"
-            >
+              className="text-blue-600 underline underline-offset-2">
               here
             </Link>
           </p>
