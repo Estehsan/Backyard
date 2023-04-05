@@ -23,7 +23,7 @@ export default function Footer() {
             <Link
               href="https://twitter.com"
               className="group"
-              aria-label="MightyHome on Twitter">
+              aria-label="MightyHomes on Twitter">
               <svg
                 aria-hidden="true"
                 className="h-6 w-6 fill-slate-500 group-hover:fill-slate-700">

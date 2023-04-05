@@ -49,7 +49,7 @@ function MobileNavIcon({ open }: { open: boolean }) {
   );
 }
 
-function MobileNavigation() {
+function MobileNavigation({ email }) {
   return (
     <Popover>
       <Popover.Button
@@ -79,11 +79,17 @@ function MobileNavigation() {
           <Popover.Panel
             as="div"
             className="absolute inset-x-0 top-full mt-4 flex origin-top flex-col rounded-2xl bg-white p-4 text-lg tracking-tight text-slate-900 shadow-xl ring-1 ring-slate-900/5">
-            <MobileNavLink href="./Dashboard">Dashboard</MobileNavLink>
-            <MobileNavLink href="#pricing">Buy Credits</MobileNavLink>
-            <MobileNavLink href="#pricing">Pricing</MobileNavLink>
+            {email ? (
+              <>
+                <MobileNavLink href="./Dashboard">Dashboard</MobileNavLink>
+                <MobileNavLink href="#pricing">Buy Credits</MobileNavLink>
+                <MobileNavLink href="#pricing">Pricing</MobileNavLink>
 
-            <hr className="m-2 border-slate-300/40" />
+                <hr className="m-2 border-slate-300/40" />
+              </>
+            ) : (
+              <div />
+            )}
             <MobileNavLink href="#features">Features</MobileNavLink>
             <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
             <MobileNavLink href="#pricing">Pricing</MobileNavLink>
@@ -136,6 +142,22 @@ export default function Header({
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
+            {photo ? (
+              <Link
+                href="/"
+                onClick={() => signOut()}
+                className="flex items-center space-x-2 hover:text-blue-400 transition">
+                <Image
+                  alt="Profile picture"
+                  src={photo}
+                  className="w-10 rounded-full"
+                  width={32}
+                  height={28}
+                />
+              </Link>
+            ) : (
+              <div className="w-10 h-10 rounded-full bg-white" />
+            )}
             {email ? (
               <div className="hidden md:flex items-center space-x-4">
                 <Link
@@ -151,22 +173,6 @@ export default function Header({
                     few
                   </div>
                 </Link>
-                {photo ? (
-                  <Link
-                    href="/"
-                    onClick={() => signOut()}
-                    className="flex items-center space-x-2 hover:text-blue-400 transition">
-                    <Image
-                      alt="Profile picture"
-                      src={photo}
-                      className="w-10 rounded-full"
-                      width={32}
-                      height={28}
-                    />
-                  </Link>
-                ) : (
-                  <div className="w-10 h-10 rounded-full bg-white" />
-                )}
               </div>
             ) : (
               <Link
@@ -176,7 +182,7 @@ export default function Header({
               </Link>
             )}
             <div className="-mr-1 md:hidden">
-              <MobileNavigation />
+              <MobileNavigation email={email} />
             </div>
           </div>
         </nav>
