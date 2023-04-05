@@ -15,7 +15,7 @@ export default function Dashboard({ rooms }: { rooms: Room[] }) {
   return (
     <div className="">
       <Head>
-        <title>RoomGPT Dashboard</title>
+        <title>MightyHouses Dashboard</title>
       </Head>
       <Header
         photo={session?.user?.image || undefined}
@@ -37,7 +37,7 @@ export default function Dashboard({ rooms }: { rooms: Room[] }) {
         ) : (
           <p className="text-gray-300">
             Browse through your previous room generations below. Any feedback?
-            Email hassan@roomgpt.io
+            estehsaan@mighthomes.com
           </p>
         )}
         {rooms.map((room) => (

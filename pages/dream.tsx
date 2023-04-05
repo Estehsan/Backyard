@@ -127,7 +127,7 @@ const Home: NextPage = () => {
     // <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
     <div>
       <Head>
-        <title>RoomGPT</title>
+        <title>MightyHouses</title>
       </Head>
       <Header
         photo={session?.user?.image || undefined}
@@ -150,7 +150,7 @@ const Home: NextPage = () => {
             className="border border-gray-700 rounded-2xl py-2 px-4 text-gray-400 text-sm my-6 duration-300 ease-in-out hover:text-gray-300 transition">
             Over{" "}
             <span className="font-semibold text-gray-200">1 million users</span>{" "}
-            have used roomGPT so far
+            have used MightyHouses.com so far
           </a>
         )}
         <h1 className="mx-auto max-w-4xl text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">

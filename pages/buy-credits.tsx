@@ -14,7 +14,7 @@ export default function Pricing() {
   return (
     <div className="">
       <Head>
-        <title>Buy RoomGPT Credits</title>
+        <title>Buy MightyHouses Credits</title>
       </Head>
       <Script src="https://js.stripe.com/v3/pricing-table.js" />
       <Script src="https://cdn.paritydeals.com/banner.js" />
@@ -26,7 +26,7 @@ export default function Pricing() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              Buy RoomGPT Credits
+              Buy MightyHouses Credits
             </p>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function Pricing() {
       </ul>
       <p className="text-gray-400 mb-5">
         Interested in team pricing or have any pricing questions? Email{" "}
-        <span className="text-gray-300">hassan@roomgpt.io</span>
+        <span className="text-gray-300">estehsaan@mighthomes.com</span>
       </p>
       <Footer />
     </div>
