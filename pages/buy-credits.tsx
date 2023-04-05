@@ -12,7 +12,7 @@ export default function Pricing() {
   const { data } = useSWR("/api/remaining", fetcher);
 
   return (
-    <div className="flex mx-auto max-w-7xl overflow-visible flex-col items-center justify-center py-2 min-h-screen">
+    <div className="">
       <Head>
         <title>Buy RoomGPT Credits</title>
       </Head>

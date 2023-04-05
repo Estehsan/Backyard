@@ -49,7 +49,7 @@ function MobileNavIcon({ open }: { open: boolean }) {
   );
 }
 
-function MobileNavigation({ email }) {
+function MobileNavigation({ email }: { email?: string }) {
   return (
     <Popover>
       <Popover.Button
@@ -82,8 +82,8 @@ function MobileNavigation({ email }) {
             {email ? (
               <>
                 <MobileNavLink href="./Dashboard">Dashboard</MobileNavLink>
-                <MobileNavLink href="#pricing">Buy Credits</MobileNavLink>
-                <MobileNavLink href="#pricing">Pricing</MobileNavLink>
+                <MobileNavLink href="./buy-credits">Buy Credits</MobileNavLink>
+                <MobileNavLink href="./#pricing">Pricing</MobileNavLink>
 
                 <hr className="m-2 border-slate-300/40" />
               </>
