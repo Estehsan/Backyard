@@ -73,19 +73,22 @@ const Home: NextPage = () => {
   };
 
   const UploadDropZone = () => (
-    <UploadDropzone
-      uploader={uploader}
-      options={options}
-      onUpdate={(file) => {
-        if (file.length !== 0) {
-          setPhotoName(file[0].originalFile.originalFileName);
-          setOriginalPhoto(file[0].fileUrl.replace("raw", "thumbnail"));
-          generatePhoto(file[0].fileUrl.replace("raw", "thumbnail"));
-        }
-      }}
-      width="670px"
-      height="250px"
-    />
+    <div className="my-6">
+      <UploadDropzone
+        uploader={uploader}
+        options={options}
+        className=" items-center space-x-3 shadow-md p-4 rounded-2xl"
+        onUpdate={(file) => {
+          if (file.length !== 0) {
+            setPhotoName(file[0].originalFile.originalFileName);
+            setOriginalPhoto(file[0].fileUrl.replace("raw", "thumbnail"));
+            generatePhoto(file[0].fileUrl.replace("raw", "thumbnail"));
+          }
+        }}
+        width="670px"
+        height="250px"
+      />
+    </div>
   );
 
   async function generatePhoto(fileUrl: string) {
@@ -266,10 +269,8 @@ const Home: NextPage = () => {
                     />
                   </div>
                   <div className="mt-4 w-full max-w-sm">
-                    <div
-                      className="flex mt-6 w-96 items-center space-x-3 shadow-md p-4 bg-white
-                    rounded-2xl
-                    ">
+                    {/* <div className="flex mt-6 w-96 items-center space-x-3 shadow-md p-4 bg-white rounded-2xl"> */}
+                    <div className="flex mt-10 items-center space-x-3">
                       <Image
                         src="/number-3-white.svg"
                         width={30}
