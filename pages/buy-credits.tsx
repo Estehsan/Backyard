@@ -43,9 +43,14 @@ export default function Pricing() {
         {session?.user?.email && (
           // @ts-ignore
 
+          // <stripe-pricing-table
+          //   pricing-table-id="prctbl_1MuHCRI8yxniryyjim6hfpND"
+          //   publishable-key="pk_live_51MsZMQI8yxniryyjxsXf7OXWuZYqClTgUJ5gj0IVCODKmROeF2tedJ5EZfVVHWLAZYTXJOXjFQBjik7xGxdUEKZd00lzz9iKNe"
+          //   client-reference-id={session.user.email}
+          //   customer-email={session.user.email}/>
           <stripe-pricing-table
-            pricing-table-id="prctbl_1MuHCRI8yxniryyjim6hfpND"
-            publishable-key="pk_live_51MsZMQI8yxniryyjxsXf7OXWuZYqClTgUJ5gj0IVCODKmROeF2tedJ5EZfVVHWLAZYTXJOXjFQBjik7xGxdUEKZd00lzz9iKNe"
+            pricing-table-id="prctbl_1MuRjSI8yxniryyjgg4X59zn"
+            publishable-key="pk_test_51MsZMQI8yxniryyj300epoUOG4BlMOAxFZgZuwc2qn7OQPLlvkwsh3cExpWm8WB83smBzGlCMEJDNJ6JlU0mCEGP00q1q2MCn3"
             client-reference-id={session.user.email}
             customer-email={session.user.email}
           />
