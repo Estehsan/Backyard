@@ -13,7 +13,7 @@ export default function Dashboard({ rooms }: { rooms: Room[] }) {
   const { data: session } = useSession();
 
   return (
-    <div className="">
+    <div>
       <Head>
         <title>MightyHouses Dashboard</title>
       </Head>

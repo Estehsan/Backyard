@@ -51,7 +51,7 @@ export default function Pricing() {
             pricing-table-id="prctbl_1MuRjSI8yxniryyjgg4X59zn"
             publishable-key="pk_test_51MsZMQI8yxniryyj300epoUOG4BlMOAxFZgZuwc2qn7OQPLlvkwsh3cExpWm8WB83smBzGlCMEJDNJ6JlU0mCEGP00q1q2MCn3"
             customer-email={session?.user?.email}
-            client-reference-id={session?.user.email}
+            customer-name={session?.user?.name}
           />
         )}
       </div>
