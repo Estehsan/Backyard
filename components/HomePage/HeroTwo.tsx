@@ -36,7 +36,7 @@ export default function Example() {
                         src="/before.jpg"
                         height={400}
                         width={400}
-                        alt="Generated photo of a room with MightyHouses.com"
+                        alt="Generated photo of a room with MightyHomes.com"
                       />
                     }
                     itemTwo={
@@ -44,7 +44,7 @@ export default function Example() {
                         src="/after.jpg"
                         height={400}
                         width={400}
-                        alt="Generated photo of a room with MightyHouses.com"
+                        alt="Generated photo of a room with MightyHomes.com"
                       />
                     }
                   />

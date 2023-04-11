@@ -15,7 +15,7 @@ export default function Dashboard({ rooms }: { rooms: Room[] }) {
   return (
     <div>
       <Head>
-        <title>MightyHouses Dashboard</title>
+        <title>Mighty Homes Dashboard</title>
       </Head>
       <Header
         photo={session?.user?.image || undefined}

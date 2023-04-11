@@ -4,7 +4,7 @@ class MyDocument extends Document {
   render() {
     let description = "Generate your dream room in seconds.";
     let ogimage = "https://www.roomgpt.io/og-image.png";
-    let sitename = "MightyHouses.com";
+    let sitename = "MightyHomes.com";
     let title = "Dream Room Generator";
 
     return (

@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>MightyHouses</title>
+        <title>Might Homes</title>
       </Head>
 
       <Header />
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
               <div>
                 <h3 className="mb-1 font-medium text-lg">Original Room</h3>
                 <Image
-                  alt="Original photo of a room with MightyHouses.com"
+                  alt="Original photo of a room with MightyHomes.com"
                   src="/1.jpg"
                   className="w-full object-cover h-96 rounded-2xl"
                   width={400}
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
               <div className="sm:mt-0 mt-8">
                 <h3 className="mb-1 font-medium text-lg">Generated Room</h3>
                 <Image
-                  alt="Generated photo of a room with MightyHouses.com"
+                  alt="Generated photo of a room with MightyHomes.com"
                   width={400}
                   height={400}
                   src="/1-new.jpg"
