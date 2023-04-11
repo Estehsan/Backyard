@@ -75,7 +75,7 @@ export default function Example() {
             <div className="mt-0 lg:mt-6 max-w-7xl sm:flex">
               <Button href="/dream">Get 5 Credits free</Button>
 
-              <div className="mt-3 rounded-lg sm:mt-0 sm:ml-3">
+              {/* <div className="mt-3 rounded-lg sm:mt-0 sm:ml-3">
                 <Button
                   href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                   variant="outline">
@@ -86,7 +86,7 @@ export default function Example() {
                   </svg>
                   <span className="ml-3">Watch video</span>
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

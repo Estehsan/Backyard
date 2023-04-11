@@ -83,16 +83,16 @@ function MobileNavigation({ email }: { email?: string }) {
               <>
                 <MobileNavLink href="./dashboard">Dashboard</MobileNavLink>
                 <MobileNavLink href="./buy-credits">Buy Credits</MobileNavLink>
-                <MobileNavLink href="./#pricing">Pricing</MobileNavLink>
+                {/* <MobileNavLink href="./#pricing">Pricing</MobileNavLink> */}
 
                 <hr className="m-2 border-slate-300/40" />
               </>
             ) : (
               <div />
             )}
-            <MobileNavLink href="#features">Features</MobileNavLink>
-            <MobileNavLink href="#testimonials">Testimonials</MobileNavLink>
-            <MobileNavLink href="#pricing">Pricing</MobileNavLink>
+            <MobileNavLink href="./#testimonials">Features</MobileNavLink>
+            <MobileNavLink href="./#testimonials">Testimonials</MobileNavLink>
+            {/* <MobileNavLink href="#pricing">Pricing</MobileNavLink> */}
           </Popover.Panel>
         </Transition.Child>
       </Transition.Root>

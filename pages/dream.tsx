@@ -77,7 +77,11 @@ const Home: NextPage = () => {
       <UploadDropzone
         uploader={uploader}
         options={options}
-        className=" items-center space-x-3 shadow-md p-4 rounded-2xl"
+        className=" items-center space-x-3 shadow-md p-4 rounded-2xl
+          text-gray-400
+            bg-gray-500 bg-opacity-50
+          text-sm border border-gray-700
+        "
         onUpdate={(file) => {
           if (file.length !== 0) {
             setPhotoName(file[0].originalFile.originalFileName);
@@ -283,6 +287,13 @@ const Home: NextPage = () => {
                     </div>
                   </div>
                   <UploadDropZone />
+                  <div>
+                    <span className="font-semibold text-gray-500">
+                      Please note that image generation may take up to one
+                      minute. If the process takes longer, feel free to refresh
+                      the page and upload again. Thank you for your patience.
+                    </span>
+                  </div>
                 </>
               ) : (
                 !originalPhoto && (
