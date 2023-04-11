@@ -3,7 +3,7 @@ import Document, { Head, Html, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     let description = "Generate your dream room in seconds.";
-    let ogimage = "https://www.roomgpt.io/og-image.png";
+    let ogimage = "https://i.postimg.cc/2S3YxWLP/Transform-Your-Home.jpg";
     let sitename = "MightyHomes.com";
     let title = "Dream Room Generator";
 
