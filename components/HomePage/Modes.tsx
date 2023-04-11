@@ -6,7 +6,7 @@ export function Modes() {
       <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            4 Ways to Elevate Your Interiors: Design in Different Modes!"{" "}
+            3 Ways to Elevate Your Interiors: Design in Different Modes!"{" "}
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
             Unlock Your Creative Style with Versatile Interior Design Modes:
@@ -24,12 +24,10 @@ export function Modes() {
             />
 
             <h1 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
-              Revamp Your Space: Unlock the Power of AI to Redesign Any Interior
-              with 40+ Design Styles!{" "}
+              AI-Revamp
             </h1>
             <p className="mx-auto text-base font-medium leading-relaxed text-gray-500">
-              Transform Your Space into Your Dream Vision with Cutting-Edge
-              AI-Powered Interior Design.
+              Redesign Any Interior with 40+ Styles!{" "}
             </p>
           </div>
           <div className="p-6">
@@ -42,12 +40,10 @@ export function Modes() {
             />
 
             <h1 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
-              From Empty to Elegant: Decorate Your Under-Construction or Empty
-              Rooms with Stunning Furniture!{" "}
+              Empty to Elegant
             </h1>
             <p className="mx-auto text-base font-medium leading-relaxed text-gray-500">
-              Elevate Your Space with Functional Furniture Arrangements for a
-              Stylish and Inviting Atmosphere.
+              Decorate Under-Construction or Empty Rooms!
             </p>
           </div>
           <div className="p-6">
@@ -60,12 +56,10 @@ export function Modes() {
             />
 
             <h1 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
-              Color Your World: Enhance Your Design with Customized Color
-              Schemes and Elements!{" "}
+              Custom Colors
             </h1>
             <p className="mx-auto text-base font-medium leading-relaxed text-gray-500">
-              Unleash Your Creativity and Elevate Your Space with Fresh Colors
-              and Enhanced Design Features
+              Enhance Your Design with Personalized Schemes!
             </p>
           </div>
         </div>

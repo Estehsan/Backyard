@@ -8,7 +8,7 @@ export function CallToAction() {
   return (
     <section
       id="get-started-today"
-      className="relative overflow-hidden bg-blue-600 py-32">
+      className="relative overflow-hidden bg-emerald-600 py-32">
       <Image
         className="absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2"
         src={backgroundImage}
@@ -20,13 +20,15 @@ export function CallToAction() {
       <Container className="relative">
         <div className="mx-auto max-w-lg text-center">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-            Get started today
+            Ready for a home makeover?{" "}
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">
-            It’s time to take control of your books. Buy our software so you can
-            feel like you’re doing something productive.
+            Try our AI-powered design tool! Just upload a photo of your room and
+            pick a design mode - modern, traditional, eclectic - in 30 seconds.
+            No credit card needed. Effortlessly transform your living space with
+            our easy and fun-to-use tool! {/* bullet points */}
           </p>
-          <Button href="/register" color="white" className="mt-10">
+          <Button href="/dashboard" color="white" className="mt-10">
             Get 5 Credits free
           </Button>
         </div>
