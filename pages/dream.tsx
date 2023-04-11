@@ -289,7 +289,7 @@ const Home: NextPage = () => {
                   <div className="h-[250px] flex flex-col items-center space-y-6 max-w-[670px] -mt-8">
                     <div className="max-w-xl text-gray-500">
                       Sign in below with Google to create a free account and
-                      redesign your room today. You will get 3 generations for
+                      redesign your room today. You will get 5 generations for
                       free.
                     </div>
                     <button

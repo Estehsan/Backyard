@@ -136,6 +136,19 @@ export function PricingSection() {
             ]}
           />
           <Plan
+            name="Starter"
+            price="$9"
+            description="Good for anyone who is self-employed and just getting started."
+            href="/register"
+            features={[
+              "Send 10 quotes and invoices",
+              "Connect up to 2 bank accounts",
+              "Track up to 15 expenses per month",
+              "Manual payroll support",
+              "Export up to 3 reports",
+            ]}
+          />
+          <Plan
             featured
             name="Small business"
             price="$15"

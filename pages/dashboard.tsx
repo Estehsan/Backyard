@@ -22,7 +22,7 @@ export default function Dashboard({ rooms }: { rooms: Room[] }) {
         email={session?.user?.email || undefined}
       />
       <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mb-0 mb-8">
-        <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-100 sm:text-6xl mb-5">
+        <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-500 sm:text-6xl mb-5">
           View your <span className="text-blue-600">room</span> generations
         </h1>
         {rooms.length === 0 ? (
