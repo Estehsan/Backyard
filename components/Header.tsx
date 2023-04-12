@@ -6,8 +6,9 @@ import clsx from "clsx";
 import { Button } from "./../components/Button";
 import { Container } from "./../components/Container";
 import { NavLink } from "./../components/NavLink";
-import { signOut } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import { Logo } from "./Logo";
+import { useRouter } from "next/router";
 
 function MobileNavLink({
   href,
@@ -118,6 +119,7 @@ export default function Header({
   email?: string;
 }) {
   const [scroll, setScroll] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -187,6 +189,16 @@ export default function Header({
                   Sign out
                 </Button>
               </div>
+            ) : // get current route
+            // if current route is /dream then show sign up button else show sign in button
+
+            router.pathname === "/dream" ? (
+              <Link
+                className="flex max-w-fit items-center justify-center space-x-2 rounded-lg border border-emerald-600 text-white px-5 py-2 text-sm shadow-md hover:bg-emerald-400 bg-emerald-600 font-medium transition"
+                href="#"
+                onClick={() => signIn("google")}>
+                <p>Sign Up </p>
+              </Link>
             ) : (
               <Link
                 className="flex max-w-fit items-center justify-center space-x-2 rounded-lg border border-emerald-600 text-white px-5 py-2 text-sm shadow-md hover:bg-emerald-400 bg-emerald-600 font-medium transition"
