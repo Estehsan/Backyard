@@ -83,6 +83,16 @@ function MobileNavigation({ email }: { email?: string }) {
               <>
                 <MobileNavLink href="./dashboard">Dashboard</MobileNavLink>
                 <MobileNavLink href="./buy-credits">Buy Credits</MobileNavLink>
+                <Button
+                  onClick={() => signOut()}
+                  className="w-full text-left
+
+
+                hover:text-blue-400
+                ">
+                  Sign out
+                </Button>
+
                 {/* <MobileNavLink href="./#pricing">Pricing</MobileNavLink> */}
 
                 <hr className="m-2 border-slate-300/40" />
@@ -170,9 +180,12 @@ export default function Header({
                   className="border-r border-gray-300 pr-4 flex space-x-2 hover:text-blue-400 transition">
                   <div>Buy Credits</div>
                   <div className="text-blue-500 bg-blue-200 rounded-full px-2 text-xs flex justify-center items-center font-bold">
-                    few
+                    New
                   </div>
                 </Link>
+                <Button onClick={() => signOut()} className="w-full text-left">
+                  Sign out
+                </Button>
               </div>
             ) : (
               <Link
