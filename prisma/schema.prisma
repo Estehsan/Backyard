@@ -17,13 +17,16 @@ model Account {
   providerAccountId String
   refresh_token     String? @db.Text
   access_token      String? @db.Text
+
+
   expires_at        Int?
+  not_before_policy  Int?
+
   token_type        String?
   scope             String?
   id_token          String? @db.Text
   session_state     String?
   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-
   @@unique([provider, providerAccountId])
 }
 

@@ -128,7 +128,7 @@ const Home: NextPage = () => {
     if (router.query.success === "true") {
       toast.success("Payment successful!");
     }
-  }, [router.query.success]);
+  }, [router.query.success, status]);
 
   return (
     // <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
