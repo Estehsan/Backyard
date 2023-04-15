@@ -9,6 +9,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
+
 model Account {
   id                String  @id @default(cuid())
   userId            String
@@ -17,11 +18,7 @@ model Account {
   providerAccountId String
   refresh_token     String? @db.Text
   access_token      String? @db.Text
-
-
-  expires_at        Int?
-  not_before_policy  Int?
-
+  expires           DateTime?
   token_type        String?
   scope             String?
   id_token          String? @db.Text
