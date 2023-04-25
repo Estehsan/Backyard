@@ -73,6 +73,7 @@ export default async function handler(
         body: JSON.stringify({
           version:
             "d55b9f2dcfb156089686b8f767776d5b61b007187a4e1e611881818098100fbb",
+
           input: {
             image: imageUrl,
             prompt: prompt,
