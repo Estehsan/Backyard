@@ -193,12 +193,14 @@ export default function Header({
             // if current route is /dream then show sign up button else show sign in button
 
             router.pathname === "/dream" ? (
-              <Link
-                className="flex max-w-fit items-center justify-center space-x-2 rounded-lg border border-emerald-600 text-white px-5 py-2 text-sm shadow-md hover:bg-emerald-400 bg-emerald-600 font-medium transition"
-                href="#"
-                onClick={() => signIn("google")}>
-                <p>Sign Up </p>
-              </Link>
+              <>
+                <Link
+                  className="flex max-w-fit items-center justify-center space-x-2 rounded-lg border border-emerald-600 text-white px-5 py-2 text-sm shadow-md hover:bg-emerald-400 bg-emerald-600 font-medium transition"
+                  href="#"
+                  onClick={() => signIn("google")}>
+                  <p>Sign Up </p>
+                </Link>
+              </>
             ) : (
               <Link
                 className="flex max-w-fit items-center justify-center space-x-2 rounded-lg border border-emerald-600 text-white px-5 py-2 text-sm shadow-md hover:bg-emerald-400 bg-emerald-600 font-medium transition"
