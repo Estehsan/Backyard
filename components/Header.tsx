@@ -203,7 +203,7 @@ export default function Header({
               </>
             ) : (
               <Link
-                className="flex max-w-fit items-center justify-center space-x-2 rounded-lg border border-emerald-600 text-white px-5 py-2 text-sm shadow-md hover:bg-emerald-400 bg-emerald-600 font-medium transition"
+                className="flex max-w-fit items-center justify-center space-x-2 rounded-lg border border-emerald-600 text-white py-2 text-sm shadow-md hover:bg-emerald-400 bg-emerald-600 font-medium transition lg:px-5 "
                 href="/dream">
                 <p>Sign Up </p>
               </Link>
