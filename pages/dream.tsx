@@ -314,6 +314,12 @@ const Home: NextPage = () => {
                       />
                       <span>Sign in with Google</span>
                     </button>
+                    <button
+                      // github
+                      onClick={() => signIn("github")}
+                      className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
+                      Sign In with Github
+                    </button>
                   </div>
                 )
               )}
