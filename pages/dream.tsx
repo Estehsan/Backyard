@@ -318,7 +318,13 @@ const Home: NextPage = () => {
                       // github
                       onClick={() => signIn("github")}
                       className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
-                      Sign In with Github
+                      <Image
+                        src="/github.png"
+                        width={20}
+                        height={20}
+                        alt="google's logo"
+                      />
+                      <span>Sign in with Github</span>{" "}
                     </button>
                   </div>
                 )
