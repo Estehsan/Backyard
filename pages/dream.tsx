@@ -326,6 +326,18 @@ const Home: NextPage = () => {
                       />
                       <span>Sign in with Github</span>{" "}
                     </button>
+                    <button
+                      // Facebook
+                      onClick={() => signIn("facebook")}
+                      className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
+                      <Image
+                        src="/fb.png"
+                        width={20}
+                        height={20}
+                        alt="facebook's logo"
+                      />
+                      <span>Sign in with Facebook</span>{" "}
+                    </button>
                   </div>
                 )
               )}
