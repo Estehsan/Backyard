@@ -34,14 +34,20 @@ export default async function handler(
     },
     select: {
       credits: true,
+      _count: {
+        select: {
+          purchases: true,
+        },
+      },
     },
   });
 
-  // Check if user has any credits left
-  if (user?.credits === 0) {
-    return res.status(400).json(`You have no generations left`);
-  }
+  let REPLICATE_KEY = process.env.REPLICATE_API_KEY;
 
+  // Check to see if user is a paying customer
+  if (user?._count?.purchases && user?._count?.purchases > 0) {
+    REPLICATE_KEY = process.env.REPLICATE_API_KEY_PAID;
+  }
   // If they have credits, decrease their credits by one and continue
   await prisma.user.update({
     where: {
@@ -72,12 +78,13 @@ export default async function handler(
         },
         body: JSON.stringify({
           version:
-            "d55b9f2dcfb156089686b8f767776d5b61b007187a4e1e611881818098100fbb",
+            "854e8727697a057c525cdb45ab037f64ecca770a1769cc52287c2e56472a247b",
 
           input: {
             image: imageUrl,
             prompt: prompt,
             structure: "hough",
+            image_resolution: "768",
             scale: 9,
             a_prompt:
               "best quality, photo from Pinterest, interior, cinematic photo, ultra-detailed, ultra-realistic, award-winning, interior design, natural lighting",
