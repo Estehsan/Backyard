@@ -324,7 +324,7 @@ const Home: NextPage = () => {
                         height={20}
                         alt="google's logo"
                       />
-                      <span>Sign in with Github</span>{" "}
+                      <span>Sign in with Githubssss</span>{" "}
                     </button>
                     <button
                       // Facebook
@@ -332,8 +332,8 @@ const Home: NextPage = () => {
                       className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
                       <Image
                         src="/fb.png"
-                        width={20}
-                        height={20}
+                        width={40}
+                        height={40}
                         alt="facebook's logo"
                       />
                       <span>Sign in with Facebook</span>{" "}
