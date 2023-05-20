@@ -303,8 +303,13 @@ const Home: NextPage = () => {
                       redesign your room today. You will get 5 generations for
                       free.
                     </div>
-                    {/* <button
-                      onClick={() => signIn("google")}
+                    <button
+                      onClick={async () => {
+                        await signIn("google", {
+                          prompt: "select_account",
+                        });
+                        router.push("/dashboard");
+                      }}
                       className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
                       <Image
                         src="/google.png"
@@ -313,7 +318,7 @@ const Home: NextPage = () => {
                         alt="google's logo"
                       />
                       <span>Sign in with Google</span>
-                    </button> */}
+                    </button>
                     <button
                       // github
                       onClick={() => signIn("github")}
@@ -324,9 +329,9 @@ const Home: NextPage = () => {
                         height={20}
                         alt="google's logo"
                       />
-                      <span>Sign in with Githubssss</span>{" "}
+                      <span>Sign in with Github</span>{" "}
                     </button>
-                    <button
+                    {/* <button
                       // Facebook
                       onClick={() => signIn("facebook")}
                       className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
@@ -337,7 +342,7 @@ const Home: NextPage = () => {
                         alt="facebook's logo"
                       />
                       <span>Sign in with Facebook</span>{" "}
-                    </button>
+                    </button> */}
                   </div>
                 )
               )}
