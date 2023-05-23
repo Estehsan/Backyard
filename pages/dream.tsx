@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 import { UploadDropzone } from "react-uploader";
 import { Uploader } from "uploader";
 import { CompareSlider } from "../components/CompareSlider";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import LoadingDots from "../components/LoadingDots";
 import ResizablePanel from "../components/ResizablePanel";
 import Toggle from "../components/Toggle";
@@ -22,6 +20,8 @@ import { Rings } from "react-loader-spinner";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Toaster, toast } from "react-hot-toast";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 // Configuration for the uploader
 const uploader = Uploader({
@@ -73,19 +73,26 @@ const Home: NextPage = () => {
   };
 
   const UploadDropZone = () => (
-    <UploadDropzone
-      uploader={uploader}
-      options={options}
-      onUpdate={(file) => {
-        if (file.length !== 0) {
-          setPhotoName(file[0].originalFile.originalFileName);
-          setOriginalPhoto(file[0].fileUrl.replace("raw", "thumbnail"));
-          generatePhoto(file[0].fileUrl.replace("raw", "thumbnail"));
-        }
-      }}
-      width="670px"
-      height="250px"
-    />
+    <div className="my-6">
+      <UploadDropzone
+        uploader={uploader}
+        options={options}
+        className=" items-center space-x-3 shadow-md p-4 rounded-2xl
+          text-gray-400
+            bg-gray-500 bg-opacity-50
+          text-sm border border-gray-700
+        "
+        onUpdate={(file) => {
+          if (file.length !== 0) {
+            setPhotoName(file[0].originalFile.originalFileName);
+            setOriginalPhoto(file[0].fileUrl.replace("raw", "thumbnail"));
+            generatePhoto(file[0].fileUrl.replace("raw", "thumbnail"));
+          }
+        }}
+        width="670px"
+        height="250px"
+      />
+    </div>
   );
 
   async function generatePhoto(fileUrl: string) {
@@ -133,28 +140,38 @@ const Home: NextPage = () => {
         photo={session?.user?.image || undefined}
         email={session?.user?.email || undefined}
       />
-      <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8">
+      <main className="bg-lightbg bg-bodyc tracking-tighter flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8">
         {status === "authenticated" ? (
           <Link
             href="/buy-credits"
             className="border border-gray-700 rounded-2xl py-2 px-4 text-gray-400 text-sm my-6 duration-300 ease-in-out hover:text-gray-300 hover:scale-105 transition">
-            Pricing is now available.{" "}
+            Pricing is available.{" "}
             <span className="font-semibold text-gray-200">Click here</span> to
             buy credits!
           </Link>
         ) : (
           <a
-            href="https://twitter.com/nutlope/status/1635674124738523139?cxt=HHwWhsCz1ei8irMtAAAA"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-gray-700 rounded-2xl py-2 px-4 text-gray-400 text-sm my-6 duration-300 ease-in-out hover:text-gray-300 transition">
             Over{" "}
-            <span className="font-semibold text-gray-200">1 million users</span>{" "}
-            have used roomGPT so far
+            <span className="font-semibold text-gray-200">1000+ users</span>{" "}
+            have used MightyHomes.com so far
           </a>
         )}
-        <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-100 sm:text-6xl mb-5">
-          Generate your <span className="text-blue-600">dream</span> room
+        <h1 className="mx-auto max-w-4xl text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+          Transform your space into a{" "}
+          <span className="relative whitespace-nowrap text-blue-600">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 418 42"
+              className="absolute top-2/3 left-0 h-[0.58em] w-full fill-emerald-300/70"
+              preserveAspectRatio="none">
+              <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z" />
+            </svg>
+            <span className="relative text-emerald-500">Mighty Homes</span>
+          </span>{" "}
         </h1>
         {status === "authenticated" && data && !restoredImage && (
           <p className="text-gray-400">
@@ -256,7 +273,8 @@ const Home: NextPage = () => {
                     />
                   </div>
                   <div className="mt-4 w-full max-w-sm">
-                    <div className="flex mt-6 w-96 items-center space-x-3">
+                    {/* <div className="flex mt-6 w-96 items-center space-x-3 shadow-md p-4 bg-white rounded-2xl"> */}
+                    <div className="flex mt-10 items-center space-x-3">
                       <Image
                         src="/number-3-white.svg"
                         width={30}
@@ -269,17 +287,29 @@ const Home: NextPage = () => {
                     </div>
                   </div>
                   <UploadDropZone />
+                  <div>
+                    <span className="font-semibold text-gray-500">
+                      Please note that image generation may take up to one
+                      minute. If the process takes longer, feel free to refresh
+                      the page and upload again. Thank you for your patience.
+                    </span>
+                  </div>
                 </>
               ) : (
                 !originalPhoto && (
                   <div className="h-[250px] flex flex-col items-center space-y-6 max-w-[670px] -mt-8">
-                    <div className="max-w-xl text-gray-300">
-                      Sign in below with Google to create a free account and
-                      redesign your room today. You will get 3 generations for
+                    <div className="max-w-xl text-gray-500">
+                      Sign in below with Github to create a free account and
+                      redesign your room today. You will get 5 generations for
                       free.
                     </div>
                     <button
-                      onClick={() => signIn("google")}
+                      onClick={async () => {
+                        await signIn("google", {
+                          prompt: "select_account",
+                        });
+                        router.push("/dashboard");
+                      }}
                       className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
                       <Image
                         src="/google.png"
@@ -289,6 +319,30 @@ const Home: NextPage = () => {
                       />
                       <span>Sign in with Google</span>
                     </button>
+                    <button
+                      // github
+                      onClick={() => signIn("github")}
+                      className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
+                      <Image
+                        src="/github.png"
+                        width={20}
+                        height={20}
+                        alt="google's logo"
+                      />
+                      <span>Sign in with Github</span>{" "}
+                    </button>
+                    {/* <button
+                      // Facebook
+                      onClick={() => signIn("facebook")}
+                      className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
+                      <Image
+                        src="/fb.png"
+                        width={40}
+                        height={40}
+                        alt="facebook's logo"
+                      />
+                      <span>Sign in with Facebook</span>{" "}
+                    </button> */}
                   </div>
                 )
               )}
