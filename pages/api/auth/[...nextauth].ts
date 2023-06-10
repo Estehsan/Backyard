@@ -32,6 +32,18 @@ export const authOptions: NextAuthOptions = {
       //   },
       // },
     }),
+
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID || "",
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET || "",
+      // authorization: {
+      //   params: {
+      //     prompt: "consent",
+      //     access_type: "offline",
+      //     response_type: "code",
+      //   },
+      // },
+    }),
   ],
 };
 

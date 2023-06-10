@@ -297,7 +297,7 @@ const Home: NextPage = () => {
                 </>
               ) : (
                 !originalPhoto && (
-                  <div className="h-[250px] flex flex-col items-center space-y-6 max-w-[670px] -mt-8">
+                  <div className="h-[400px] flex flex-col items-center space-y-6 max-w-[670px] -mt-8">
                     <div className="max-w-xl text-gray-500">
                       Sign in below with Github to create a free account and
                       redesign your room today. You will get 5 generations for
@@ -331,7 +331,7 @@ const Home: NextPage = () => {
                       />
                       <span>Sign in with Github</span>{" "}
                     </button>
-                    {/* <button
+                    <button
                       // Facebook
                       onClick={() => signIn("facebook")}
                       className="bg-gray-200 text-black font-semibold py-3 px-6 rounded-2xl flex items-center space-x-2">
@@ -341,8 +341,11 @@ const Home: NextPage = () => {
                         height={40}
                         alt="facebook's logo"
                       />
-                      <span>Sign in with Facebook</span>{" "}
-                    </button> */}
+                      <span>Sign in with FB</span>{" "}
+                    </button>
+                    {/* margin bottom */}
+                    <div className="mb-10"></div>
+                    <div className="mb-10"></div>
                   </div>
                 )
               )}
