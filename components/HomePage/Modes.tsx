@@ -6,11 +6,10 @@ export function Modes() {
       <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            3 Ways to Elevate Your Interiors: Design in Different Modes!"{" "}
+          Challenges in Traditional Home Design{" "}
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Unlock Your Creative Style with Versatile Interior Design Modes:
-            Explore 4 Distinctive Approaches!
+          Our AI-driven platform seamlessly integrates your design aspirations with your budget, ensuring every project remains affordable without compromising on your vision.
           </p>
         </div>
         <div className="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
@@ -40,7 +39,7 @@ export function Modes() {
             />
 
             <h1 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
-              Empty to Elegant
+            Misalignment between design aspirations and budget.
             </h1>
             <p className="mx-auto text-base font-medium leading-relaxed text-gray-500">
               Decorate Under-Construction or Empty Rooms!
@@ -56,7 +55,7 @@ export function Modes() {
             />
 
             <h1 className="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">
-              Custom Colors
+              Inefficeint Design Process
             </h1>
             <p className="mx-auto text-base font-medium leading-relaxed text-gray-500">
               Enhance Your Design with Personalized Schemes!

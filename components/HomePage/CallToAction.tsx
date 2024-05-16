@@ -23,10 +23,7 @@ export function CallToAction() {
             Ready for a home makeover?{" "}
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">
-            Try our AI-powered design tool! Just upload a photo of your room and
-            pick a design mode - modern, traditional, eclectic - in 30 seconds.
-            No credit card needed. Effortlessly transform your living space with
-            our easy and fun-to-use tool! {/* bullet points */}
+          Try our AI-powered home design tool! Simply input your budget and style preferences—modern, traditional, eclectic—and get personalized design and products recommendations in seconds. No credit card needed. Effortlessly transform your home within your budget using our easy and fun-to-use platform! {/* bullet points */}
           </p>
           <Button href="/dashboard" color="white" className="mt-10">
             Get 5 Credits free
