@@ -24,9 +24,10 @@ const Home: NextPage = () => {
         {/* <Hero /> */}
         <HeroTwo />
         <Testimonials />
-        {/* <PricingSection /> */}
+        <PricingSection />
         <CallToAction />
         <Modes />
+        {/* Make A TAILWIND ABOUT OUR TEAM ADD THREE PICTURES AND NAME AND THEIR SOCIAL MEDIA */}
 
         <div className="flex justify-between items-center w-full flex-col sm:mt-10 mt-6">
           <div className="flex flex-col space-y-10 mt-4 mb-16">

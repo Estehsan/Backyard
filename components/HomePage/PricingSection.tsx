@@ -63,31 +63,39 @@ function Plan({
     <section
       className={clsx(
         "flex flex-col rounded-3xl px-6 sm:px-8",
-        featured ? "order-first bg-blue-600 py-8 lg:order-none" : "lg:py-8"
-      )}>
+        featured ? "order-first bg-blue-600 py-8 lg:order-none" : "lg:py-8",
+        "items-center" // Add this line to center the section
+      )}
+    >
+      <div className="flex items-center justify-center rounded-ful h-22 w-22">
+        <img
+          src={price}
+          alt={name}
+          className="rounded-full h-22 w-22"
+        />
+      </div>
       <h3 className="mt-5 font-display text-lg text-white">{name}</h3>
-      <p
+      {/* <p
         className={clsx(
           "mt-2 text-base",
           featured ? "text-white" : "text-slate-400"
-        )}>
+        )}
+      >
         {description}
-      </p>
+      </p> */}
+{/*       
       <p className="order-first font-display text-5xl font-light tracking-tight text-white">
         {price}
-      </p>
+      </p> */}
+
+
       <ul
         role="list"
         className={clsx(
           "order-last mt-10 flex flex-col gap-y-3 text-sm",
           featured ? "text-white" : "text-slate-200"
         )}>
-        {features.map((feature) => (
-          <li key={feature} className="flex">
-            <CheckIcon className={featured ? "text-white" : "text-slate-400"} />
-            <span className="ml-4">{feature}</span>
-          </li>
-        ))}
+     
       </ul>
       <Button
         href={href}
@@ -95,7 +103,7 @@ function Plan({
         color="white"
         className="mt-8"
         aria-label={`Get started with the ${name} plan for ${price}`}>
-        Get started
+        Linkedin
       </Button>
     </section>
   );
@@ -112,48 +120,35 @@ export function PricingSection() {
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
             <span className="relative whitespace-nowrap">
               <SwirlyDoodle className="absolute top-1/2 left-0 h-[1em] w-full fill-blue-400" />
-              <span className="relative">Simple pricing,</span>
+              <span className="relative">About Our,</span>
             </span>{" "}
-            for everyone.
+            Team.
           </h2>
           <p className="mt-4 text-lg text-slate-400">
-            It doesn’t matter what size your business is, our software won’t
-            work well for you.
+          MightyHomes is powered by a diverse group of passionate innovators committed to revolutionizing home design through technology. Get to know the visionaries behind MightyHomes
           </p>
         </div>
         <div className="-mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-3 xl:mx-0 xl:gap-x-8">
-          <Plan
-            name="Starter"
-            price="$9"
-            description="Good for anyone who is self-employed and just getting started."
-            href="/register"
-            features={[
-              "Send 10 quotes and invoices",
-              "Connect up to 2 bank accounts",
-              "Track up to 15 expenses per month",
-              "Manual payroll support",
-              "Export up to 3 reports",
-            ]}
-          />
-          <Plan
-            name="Starter"
-            price="$9"
-            description="Good for anyone who is self-employed and just getting started."
-            href="/register"
-            features={[
-              "Send 10 quotes and invoices",
-              "Connect up to 2 bank accounts",
-              "Track up to 15 expenses per month",
-              "Manual payroll support",
-              "Export up to 3 reports",
-            ]}
-          />
+    
           <Plan
             featured
-            name="Small business"
-            price="$15"
+            name="Estehsan Tariq"
+            price="https://286dc4e88650c0fe.demo.carrd.co/assets/images/image09.png?v=24fce934"
+            description="Good for anyone who is self-employed and just getting started."
+            href="https://www.linkedin.com/in/estehsan/"
+            features={[
+              "Send 10 quotes and invoices",
+              "Connect up to 2 bank accounts",
+              "Track up to 15 expenses per month",
+              "Manual payroll support",
+              "Export up to 3 reports",
+            ]}
+          />
+          <Plan
+            name="Ann"
+            price="https://286dc4e88650c0fe.demo.carrd.co/assets/images/image07.png?v=24fce934"
             description="Perfect for small / medium sized businesses."
-            href="/register"
+            href="https://www.linkedin.com/in/ann-nguyen-1a44b7287/"
             features={[
               "Send 25 quotes and invoices",
               "Connect up to 5 bank accounts",
@@ -165,10 +160,10 @@ export function PricingSection() {
             ]}
           />
           <Plan
-            name="Enterprise"
-            price="$39"
+            name="Yaman"
+            price="https://286dc4e88650c0fe.demo.carrd.co/assets/images/image08.png?v=24fce934"
             description="For even the biggest enterprise companies."
-            href="/register"
+            href="https://www.linkedin.com/in/yaman-al-halabi2002"
             features={[
               "Send unlimited quotes and invoices",
               "Connect up to 15 bank accounts",
